@@ -24,7 +24,7 @@ sudo systemctl disable v2ray --now ### Xray 需要替换服务为 xray 安装 v2
 v2rayA for OpenWrt 仓库主页 OSDN 主页 可以使用反向代理了 OSDN 的开源镜像站来加速下载。
 其它安装方式 安装 V2Ray 内核 / Xray 内核 首先安装软件包 unzip 与 wget，然后从 Github Releases 下载 v2ray 内核然后将其保存到 /usr/bin，最后给予二进制文件可执行权限。
 例如：
-opkg update; opkg install unzip wget wget https://github.com/v2fly/v2ray-core/releases/download/v4.40.1/v2ray-linux-64.zip unzip -d v2ray-core v2ray-linux-64.zip cp v2ray-core/v2ray v2ray-core/v2ctl /usr/bin chmod +x /usr/bin/v2ray; chmod +x /usr/bin/v2ctl 擦亮眼睛
+opkg update; opkg install unzip wget-ssl wget https://github.com/v2fly/v2ray-core/releases/download/v4.40.1/v2ray-linux-64.zip unzip -d v2ray-core v2ray-linux-64.zip cp v2ray-core/v2ray v2ray-core/v2ctl /usr/bin chmod +x /usr/bin/v2ray; chmod +x /usr/bin/v2ctl 擦亮眼睛
 格外注意你的 OpenWrt 设备的架构，不要下载到不适用于你设备的版本，否则内核将无法运行。
 自 OpenWrt 21.</description></item><item><title>RedHat / openSUSE</title><link>https://v2raya.org/docs/prologue/installation/redhat/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/redhat/</guid><description>Fedora 34 / 35 以及 CentOS Stream 8 添加 copr 源 sudo dnf copr enable zhullyb/v2rayA 安装 V2Ray 内核 sudo dnf install v2ray-core 如需Xray内核请参考: https://github.com/XTLS/Xray-install 安装 v2rayA sudo dnf install v2raya Fedora Silverblue / Kinoite 稳定方法 切换到合适的路径:
 cd ~/Downloads mkdir v2rayA cd v2rayA 进入 toolbox:
