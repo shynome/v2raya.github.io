@@ -6,12 +6,12 @@ brew tap v2raya/v2raya 安装 v2rayA:
 brew install v2raya/v2raya/v2raya 运行 安装完成之后可以在终端通过 v2raya --lite 命令运行，也可以启动服务：
 brew services start v2raya 手动安装 创建目录 这些目录可能已经存在，创建之前请注意检查。
 二进制所在目录：
-sudo mkdir /usr/local/bin/ 数据文件所在目录：</description></item><item><title>Windows</title><link>https://v2raya.org/docs/prologue/installation/windows/</link><pubDate>Tue, 31 Aug 2021 14:48:45 +0800</pubDate><guid>https://v2raya.org/docs/prologue/installation/windows/</guid><description>使用安装包安装 安装包将内置 v2ray-core，如需更换 Xray-core，可在安装完毕后于安装目录手动进行替换。
-方法一：通过 WinGet 安装 WinGet 是微软推出的软件包管理器，适用于 Windows 10 以及更新版本的操作系统。
+sudo mkdir /usr/local/bin/ 数据文件所在目录：</description></item><item><title>Windows</title><link>https://v2raya.org/docs/prologue/installation/windows/</link><pubDate>Tue, 31 Aug 2021 14:48:45 +0800</pubDate><guid>https://v2raya.org/docs/prologue/installation/windows/</guid><description>使用安装包 安装包将内置 v2ray-core，如需更换 Xray-core，可在安装完毕后于安装目录手动进行替换。
+方法一：通过 WinGet 自动安装 WinGet 是微软推出的软件包管理器，适用于 Windows 10 以及更新版本的操作系统。
 winget install --id v2raya.win 方法二：手动运行安装包 从 GitHub Releases 下载适用于 Windows 的安装包，例如 installer_windows_x64_1.5.6.exe，按照指示安装完毕即可。
 使用方法 通过安装包安装 v2rayA 后，v2rayA 将以服务的形式运行，默认情况下将开机自启，你也可以在任务管理器中的“服务”选项卡管理 v2rayA 的启动与停止。你可以通过运行桌面快捷方式或直接访问 http://127.0.0.1:2017 打开管理页面。
-直接使用 v2rayA 二进制 所有的命令都在 PowerShell 中运行，CMD 用户请注意命令格式。
-方法一：通过 Scoop 安装 你可以通过 Scoop 安装 v2rayA，安装完成后可以直接通过 v2raya 命令运行。
+通过 Scoop 安装 安装 所有的命令都在 PowerShell 中运行，CMD 用户请注意命令格式。
+你首先需要安装 Scoop ，然后才能从 scoop 安装 v2rayA。
 添加 Scoop 源：
 scoop bucket add v2raya https://github.com/v2rayA/v2raya-scoop 更新 Scoop 信息：
 scoop update 安装 v2rayA：</description></item><item><title>Alpine</title><link>https://v2raya.org/docs/prologue/installation/alpine/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/alpine/</guid><description>安装 V2Ray 内核 / Xray 内核 如果你已经安装了内核，可以跳过此节。
