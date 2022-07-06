@@ -10,11 +10,11 @@ sudo mkdir /usr/local/bin/ 数据文件所在目录：</description></item><item
 方法一：通过 WinGet 自动安装 WinGet 是微软推出的软件包管理器，适用于 Windows 10 以及更新版本的操作系统。
 winget install --id v2raya.win 方法二：手动运行安装包 从 GitHub Releases 下载适用于 Windows 的安装包，例如 installer_windows_x64_1.5.6.exe，按照指示安装完毕即可。
 使用方法 通过安装包安装 v2rayA 后，v2rayA 将以服务的形式运行，默认情况下将开机自启，你也可以在任务管理器中的“服务”选项卡管理 v2rayA 的启动与停止。你可以通过运行桌面快捷方式或直接访问 http://127.0.0.1:2017 打开管理页面。
-通过 Scoop 安装 安装 所有的命令都在 PowerShell 中运行，CMD 用户请注意命令格式。
+使用 Scoop 安装二进制 安装 v2rayA 所有的命令都在 PowerShell 中运行，CMD 用户请注意命令格式。
 你首先需要安装 Scoop ，然后才能从 scoop 安装 v2rayA。
 添加 Scoop 源：
 scoop bucket add v2raya https://github.com/v2rayA/v2raya-scoop 更新 Scoop 信息：
-scoop update 安装 v2rayA：</description></item><item><title>Alpine</title><link>https://v2raya.org/docs/prologue/installation/alpine/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/alpine/</guid><description>安装 V2Ray 内核 / Xray 内核 如果你已经安装了内核，可以跳过此节。
+scoop update 安装：</description></item><item><title>Alpine</title><link>https://v2raya.org/docs/prologue/installation/alpine/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/alpine/</guid><description>安装 V2Ray 内核 / Xray 内核 如果你已经安装了内核，可以跳过此节。
 方法 1：从软件包管理器安装 从 Alpine Linux 3.15 开始，V2Ray 已经进入了 Community 源。编辑 apk 的配置以启用 Community 源：
 vi /etc/apk/repositories http://dl-cdn.alpinelinux.org/alpine/v3.15/main http://dl-cdn.alpinelinux.org/alpine/v3.15/community 然后安装 V2Ray：
 apk update &amp;amp;&amp;amp; apk add v2ray 方法 2：V2Ray / Xray 的官方脚本 V2Ray 安装参考：https://github.com/v2fly/alpinelinux-install-v2ray Xray 安装参考：https://github.com/XTLS/alpinelinux-install-xray 安装 v2rayA 下载二进制可执行文件 根据你的平台，从 Release 获取具有 v2raya_linux_xxx 字样的无后缀名文件，并将其重命名为 v2raya，再把 v2raya 移动到 /usr/local/bin 并给予可执行权限。
