@@ -25,11 +25,9 @@ sudo systemctl disable v2ray --now ### Xray 需要替换服务为 xray 安装 v2
 # run v2raya docker run -d \ --restart=always \ --privileged \ --network=host \ --name v2raya \ -e V2RAYA_ADDRESS=0.0.0.0:2017 \ -v /lib/modules:/lib/modules:ro \ -v /etc/resolv.conf:/etc/resolv.conf \ -v /etc/v2raya:/etc/v2raya \ mzz2017/v2raya 如果你使用 MacOSX 或其他不支持 host 模式的环境，在该情况下无法使用全局透明代理，或者你不希望使用全局透明代理，docker 命令会略有不同：
 # run v2raya docker run -d \ -p 2017:2017 \ -p 20170-20172:20170-20172 \ --restart=always \ --name v2raya \ -v /etc/v2raya:/etc/v2raya \ mzz2017/v2raya</description></item><item><title>OpenWrt</title><link>https://v2raya.org/docs/prologue/installation/openwrt/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/openwrt/</guid><description>通过 v2rayA 自建软件源安装 参考：
 v2rayA for OpenWrt 仓库主页 OSDN 主页 可以使用反向代理了 OSDN 的开源镜像站来加速下载。
-其它安装方式 安装 V2Ray 内核 / Xray 内核 首先安装软件包 unzip 与 wget，然后从 Github Releases 下载 v2ray 内核然后将其保存到 /usr/bin，最后给予二进制文件可执行权限。
-例如：
-opkg update; opkg install unzip wget-ssl wget https://github.com/v2fly/v2ray-core/releases/download/v4.40.1/v2ray-linux-64.zip unzip -d v2ray-core v2ray-linux-64.zip cp v2ray-core/v2ray v2ray-core/v2ctl /usr/bin chmod +x /usr/bin/v2ray; chmod +x /usr/bin/v2ctl 擦亮眼睛
-格外注意你的 OpenWrt 设备的架构，不要下载到不适用于你设备的版本，否则内核将无法运行。
-自 OpenWrt 21.</description></item><item><title>RedHat / openSUSE</title><link>https://v2raya.org/docs/prologue/installation/redhat/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/redhat/</guid><description>Fedora 34 / 35 / 36 以及 CentOS Stream 8 添加 copr 源 sudo dnf copr enable zhullyb/v2rayA 安装 V2Ray 内核 sudo dnf install v2ray-core 如需Xray内核请参考: https://github.com/XTLS/Xray-install 安装 v2rayA sudo dnf install v2raya Fedora Silverblue / Kinoite 稳定方法 切换到合适的路径:
+通过 OpenWrt 官方软件源安装 目前只有 openWrt 最新的 snapshot 版本软件源中含有 v2rayA，使用此版本的用户可以直接从软件源安装。
+opkg update opkg install v2raya 由于目前 openWrt 的软件源中没有 v2ray-core, xray-core 会作为依赖被安装。 如果你打算使用 v2ray，那么你需要手动安装它。在同时存在 v2ray 与 xray 的情况下，v2rayA 将优先使用前者。
+手动安装 安装 V2Ray 内核 / Xray 内核 首先安装软件包 unzip 与 wget，然后从 Github Releases 下载 v2ray 内核然后将其保存到 /usr/bin，最后给予二进制文件可执行权限。</description></item><item><title>RedHat / openSUSE</title><link>https://v2raya.org/docs/prologue/installation/redhat/</link><pubDate>Mon, 16 Nov 2020 13:59:39 +0100</pubDate><guid>https://v2raya.org/docs/prologue/installation/redhat/</guid><description>Fedora 34 / 35 / 36 以及 CentOS Stream 8 添加 copr 源 sudo dnf copr enable zhullyb/v2rayA 安装 V2Ray 内核 sudo dnf install v2ray-core 如需Xray内核请参考: https://github.com/XTLS/Xray-install 安装 v2rayA sudo dnf install v2raya Fedora Silverblue / Kinoite 稳定方法 切换到合适的路径:
 cd ~/Downloads mkdir v2rayA cd v2rayA 进入 toolbox:
 toolbox enter 开启 copr 仓库:
 sudo dnf copr enable zhullyb/v2rayA 下载软件包:
