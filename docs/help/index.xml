@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Help on</title><link>https://v2raya.org/docs/help/</link><description>Recent content in Help on</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 19 Aug 2021 08:49:15 +0000</lastBuildDate><atom:link href="https://v2raya.org/docs/help/index.xml" rel="self" type="application/rss+xml"/><item><title>如何编译</title><link>https://v2raya.org/docs/help/how-to-build/</link><pubDate>Sat, 25 Sep 2021 21:31:02 +0800</pubDate><guid>https://v2raya.org/docs/help/how-to-build/</guid><description>准备构建环境 确保你的系统上安装了 yarn、nodejs、git 和 golang。
 Windows 从 scoop 安装：
-scoop install yarn nodejs-lts go 你不需要再次安装 git，因为 scoop 依赖于 git。换而言之，当你使用 scoop 的时候，git 是一定安装好了的。
+scoop install yarn nodejs-lts go 如果你是在刚刚安装 scoop 之后运行该命令，那么你还需要安装 git 或 mingit。
 建议安装 PowerShell Core，，如此 scoop 将能更好地工作（尤其是在旧版本 Windows 系统中）。可以从 GitHub 或 Microsoft Store 下载 PowerShell Core。
-Arch Linux 及其衍生版 sudo pacman -S git yarn go 其它 Linux 安装 Git： Debian / Ubuntu
+Arch Linux 及其衍生版 sudo pacman -S git yarn go 其它 Linux 部分发行版可能提供了 NodeJS 与 Go 语言的安装包，下面的安装方法主要以手动安装为主。
+安装 Git： Debian / Ubuntu
 sudo apt install git RedHat / Alma Linux / Rocky Linux /Fedora</description></item><item><title>如何更新</title><link>https://v2raya.org/docs/help/how-to-update/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://v2raya.org/docs/help/how-to-update/</guid><description>更新 V2Ray / Xray 通过脚本更新 脚本会自动获取最新版本然后安装，因此，你只需要重新运行一次安装脚本就能更新核心
 软件源更新 如果你从软件源安装了 v2rayA，那么在你更新系统与软件的时候，v2rayA 的更新也会随之安装。以 Debian 系统为例，更新系统与软件的命令为：
 sudo apt update sudo apt upgrade Fedora / CentOS Stream 8 用户应当使用 dnf 命令以取代 apt 命令来获取更新，除此之外，Gnome Software、Discover、系统更新器等图形化工具也可以更新核心。
@@ -11,7 +12,9 @@ sudo apt update sudo apt upgrade Fedora / CentOS Stream 8 用户应当使用 dnf
 # 重新执行原来的 `docker run` 命令 docker run .... 提取并保留容器配置 如果原来并未进行目录挂载、想在新建容器时保留原来的配置，则需要提取原始容器内部的配置文件，并进行目录映射。
 # 提取配置文件夹 # 其中 v2raya 为你的容器名称 docker cp v2raya:/etc/v2raya/ /path/to/config # docker run 命令添加目录挂载信息 # .</description></item><item><title>Troubleshooting</title><link>https://v2raya.org/docs/help/troubleshooting/</link><pubDate>Thu, 12 Nov 2020 15:22:20 +0100</pubDate><guid>https://v2raya.org/docs/help/troubleshooting/</guid><description>Problems updating npm packages Delete the ./node_modules folder, and run again:
 npm install Problems with cache Delete the temporary directories:
-npm run clean</description></item><item><title>FAQ</title><link>https://v2raya.org/docs/help/faq/</link><pubDate>Thu, 19 Aug 2021 08:49:31 +0000</pubDate><guid>https://v2raya.org/docs/help/faq/</guid><description>Hyas? Doks is a Hyas theme build by the creator of Hyas.
-Footer notice? Please keep it in place.
-Keyboard shortcuts for search? focus: / select: ↓ and ↑ open: Enter close: Esc Other documentation? Netlify Hugo Can I get support? Create a topic:
-Netlify Community Hugo Forums Doks Discussions Contact the creator? Send h-enk a message:</description></item></channel></rss>
+npm run clean</description></item><item><title>FAQ</title><link>https://v2raya.org/docs/help/faq/</link><pubDate>Thu, 19 Aug 2021 08:49:31 +0000</pubDate><guid>https://v2raya.org/docs/help/faq/</guid><description>v2rayA 会有 Electron 版本吗？ A: v2rayA 变成 Electron 是可能的，但是官方不会去做，因为大家的 PC 上有太多的 Chromium 了，我们不想让这个世界上再多一个 Chromium 的新皮肤。
+开发组提供付费服务吗？ A: 不提供任何付费服务，如果你愿意支持我们，提交代码是一个非常好的选择。
+旁路由需要注意什么？ A: 需要注意网关的层次，不能“互指”，同时建议开启“允许 IP 转发”以启用 Linux 系统的 IP Forwarding 功能。除此之外，DNS 查询也需要让 v2rayA 本身或者 v2rayA 所在主机的 DNS 查询软件接管，否则很可能无法避免 DNS 污染问题。
+v2rayA 开发者都是哪里人？ A: 我们都是 100% 的地球人，相信我，我们中间没有外星人或机器人。
+为啥快捷方式/桌面图标打开来是空白的网页？ A: 桌面上的图标、菜单里面的图标的本质都是试图打开 http://localhost:2017 这个网页，即 v2rayA 默认监听的端口。你需要使用 systemctl 或 brew services 、 /etc/init.d/v2raya 或类似的命令来控制 v2rayA 本身的启动与关闭。
+OpenWrt 之外的 Linux 做网关合适吗？ A: 当然合适，以 Debian 举例，你可以用 systemd-networkd 做网络管理与 DHCPv4 服务器、DHCPv6 的中继器，用 systemd-resolved 来充当 DNS 查询转发工具，用 pppoeconf 来进行拨号。只是相对于 OpenWrt，普通 Linux 发行版需要你通过命令行来手动配置网络与 DNS。</description></item></channel></rss>
